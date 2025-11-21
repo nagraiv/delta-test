@@ -1,0 +1,23 @@
+@use "./variables" as *;
+@use './mixins' as *;
+
+html {
+  font-size: var(--table-font-size);
+}
+
+body {
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  font-family: Segoe UI, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  color: $text-base;
+  background-color: $white;
+}
+
+* {
+  box-sizing: border-box;
+}

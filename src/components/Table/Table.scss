@@ -1,0 +1,63 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+table {
+  margin: var(--gutter) auto;
+  border-collapse: collapse;
+  background: $bg-gray;
+}
+
+.table-cell {
+  @include cell-border;
+  padding: .6rem 2rem;
+  min-width: 6rem;
+}
+
+th.table-cell {
+  padding-inline: .5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+:is(th, td):nth-child(2) {
+  background-color: $bg-blue;
+}
+
+td:not(:first-child) {
+  text-align: right;
+}
+
+.label-cell {
+  padding-inline: .75rem;
+  min-width: 20rem;
+}
+
+.value-cell {
+  padding-inline: .5rem 3.5rem;
+  position: relative;
+}
+
+.value-cell span {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 3.5rem;
+  padding: .6rem .5rem;
+  color: $text-green;
+  font-weight: 500;
+}
+
+.value-cell.negative span {
+  color: $text-red;
+  font-weight: 500;
+}
+
+.table-cell.positive {
+  background-color: $bg-green;
+}
+
+.table-cell.negative {
+  background-color: $bg-red;
+}

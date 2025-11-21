@@ -1,0 +1,5 @@
+@use "./variables" as *;
+
+@mixin cell-border {
+  border: .25rem solid $white;
+}

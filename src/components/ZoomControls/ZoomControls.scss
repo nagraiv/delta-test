@@ -1,0 +1,26 @@
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  button {
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .zoom-label {
+    display: inline-block;
+    min-width: 40px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
