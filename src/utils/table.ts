@@ -1,21 +1,30 @@
 import { TableRowData } from "../components/Table/table.types.js";
 
 export const sumChildren = (row: TableRowData): TableRowData => {
-    if (!row.children) return row;
+    if (row.children === undefined || row.children.length === 0) return row;
 
     const summed: TableRowData = { ...row };
+    const children = row.children
 
-    summed.today = row.children.reduce(
+    summed.today = children.reduce(
         (acc, child) => acc + (child.today || 0),
         0
     );
-    summed.yesterday = row.children.reduce(
+    summed.yesterday = children.reduce(
         (acc, child) => acc + (child.yesterday || 0),
         0
     );
-    summed.weekday = row.children.reduce(
+    summed.weekday = children.reduce(
         (acc, child) => acc + (child.weekday || 0),
         0
+    );
+
+    const weekLength = 7;
+    summed.weekData = Array.from({ length: weekLength }, (_, ind) =>
+        children.reduce(
+            (acc, child) => acc + ((child.weekData?.[ind]) || 0),
+            0
+        )
     );
 
     return summed;

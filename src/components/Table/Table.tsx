@@ -15,14 +15,16 @@ const Table = ({ data }: TableProps) => {
     );
 
     return (
-        <table>
-            <TableHeader />
-            <tbody>
-            {data.map((row: TableRowData, idx) => (
-                <TableRow key={idx} row={row} level={0} />
-            ))}
-            </tbody>
-        </table>
+        <div className="table-wrapper">
+            <table>
+                <TableHeader />
+                <tbody>
+                {data.map((row: TableRowData, idx) => (
+                    <TableRow key={idx} row={row} level={0} />
+                ))}
+                </tbody>
+            </table>
+        </div>
     );
 };
 

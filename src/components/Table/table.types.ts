@@ -6,6 +6,7 @@ export interface TableRowData {
     today?: number;
     yesterday?: number;
     weekday?: number;
+    weekData?: number[];
 }
 
 export interface TableProps {

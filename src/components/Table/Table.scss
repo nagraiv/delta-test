@@ -1,10 +1,18 @@
 @use "@/styles/variables" as *;
 @use "@/styles/mixins" as *;
 
+.table-wrapper {
+  overflow: auto;
+}
+
 table {
   margin: var(--gutter) auto;
   border-collapse: collapse;
   background: $bg-gray;
+}
+
+tr {
+  cursor: pointer;
 }
 
 .table-cell {
